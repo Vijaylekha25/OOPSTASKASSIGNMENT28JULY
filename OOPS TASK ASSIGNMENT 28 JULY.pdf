@@ -1,0 +1,124 @@
+Q1, Create a vehicle class with an init method having instance variables as name_of_vehicle, max_speed and average_of_vehicle.
+
+class Vehicle:
+    def __init__(self, name_of_vehicle, max_speed, average_of_vehicle):
+        self.name_of_vehicle = name_of_vehicle
+        self.max_speed = max_speed
+        self.average_of_vehicle = average_of_vehicle
+​
+# Creating an object of the 'Vehicle' class
+vehicle1 = Vehicle("Car", 200, 30)
+print(vehicle1.name_of_vehicle)      # Output: Car
+print(vehicle1.max_speed)            # Output: 200
+print(vehicle1.average_of_vehicle)   # Output: 30
+Car
+200
+30
+Q2. Create a child class car from the vehicle class created in Que 1, which will inherit the vehicle class. Create a method named seating_capacity which takes capacity as an argument and returns the name of the vehicle and its seating capacity.
+
+class Car(Vehicle):
+    def seating_capacity(self, capacity):
+        return f"{self.name_of_vehicle} has a seating capacity of {capacity} passengers."
+​
+# Creating an object of the 'Car' class
+car1 = Car("Sedan", 180, 25)
+​
+# Accessing attributes of the 'Vehicle' class using the 'Car' object
+print(car1.name_of_vehicle)   # Output: Sedan
+print(car1.max_speed)         # Output: 180
+print(car1.average_of_vehicle)# Output: 25
+​
+# Calling the 'seating_capacity' method of the 'Car' class
+print(car1.seating_capacity(5))   # Output: Sedan has a seating capacity of 5 passengers.
+Sedan
+180
+25
+Sedan has a seating capacity of 5 passengers.
+Q3. What is multiple inheritance? Write a python code to demonstrate multiple inheritance.
+
+# Base classes
+class A:
+    def method_a(self):
+        return "Method A from class A."
+​
+class B:
+    def method_b(self):
+        return "Method B from class B."
+​
+# Derived class inheriting from both A and B
+class C(A, B):
+    pass
+​
+# Creating an object of the 'C' class
+c = C()
+​
+# Accessing methods of both base classes
+print(c.method_a())    # Output: Method A from class A.
+print(c.method_b())    # Output: Method B from class B.
+Method A from class A.
+Method B from class B.
+Q4. What are getter and setter in python? Create a class and create a getter and a setter method in this class.
+
+class Person:
+    def __init__(self, name, age):
+        self.__name = name
+        self.__age = age
+​
+    # Getter method for 'name'
+    def get_name(self):
+        return self.__name
+​
+    # Setter method for 'name'
+    def set_name(self, name):
+        self.__name = name
+​
+    # Getter method for 'age'
+    def get_age(self):
+        return self.__age
+​
+    # Setter method for 'age'
+    def set_age(self, age):
+        if age >= 0:
+            self.__age = age
+​
+# Creating an object of the 'Person' class
+person1 = Person("John", 30)
+​
+# Using getter and setter methods to access and modify attributes
+print(person1.get_name())    # Output: John
+person1.set_name("Alice")
+print(person1.get_name())    # Output: Alice
+​
+print(person1.get_age())     # Output: 30
+person1.set_age(25)
+print(person1.get_age())     # Output: 25
+John
+Alice
+30
+25
+Q5.What is method overriding in python? Write a python code to demonstrate method overriding.
+
+class Animal:
+    def make_sound(self):
+        return "Animal makes a sound."
+​
+class Dog(Animal):
+    def make_sound(self):
+        return "Dog barks."
+​
+class Cat(Animal):
+    def make_sound(self):
+        return "Cat meows."
+​
+# Creating objects of the subclasses
+dog = Dog()
+cat = Cat()
+​
+# Calling the overridden method for each subclass
+print(dog.make_sound())    # Output: Dog barks.
+print(cat.make_sound())    # Output: Cat meows.
+Dog barks.
+Cat meows.
+
+
+​
